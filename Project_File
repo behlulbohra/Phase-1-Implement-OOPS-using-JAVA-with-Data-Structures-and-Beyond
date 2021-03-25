@@ -1,5 +1,6 @@
 package project;
 
+
 import java.io.File;
 import java.io.IOException;
 import java.util.Arrays;
@@ -31,13 +32,6 @@ public class Project_File {
                     "5 -> Exit Program\n"
                     + "Enter your Choice:  ";
 
-//    private static final String MENU_LIST =
-//            "   \nChoose any of the following options given below: \n"+
-//                    "   a -> Adding a file\n"+
-//                    "   b -> Deleting a file\n"+
-//                    "   c -> Searchina a file\n"+
-//                    "   d -> GoBack";
-
     void display() {
         System.out.print(MAIN_MENU);
         try{
@@ -57,14 +51,14 @@ public class Project_File {
                 }
                 case 3 : {
                 	 System.out.print(" Please enter a file name for Searching : ");
-                     String filename = sc.next().trim().toLowerCase();
+                     String filename = sc.next().trim();
                      searchFile(filename);
                      display();
                 }
                 
                 case 4 : {
                 	System.out.print(" Please Enter a File Name for deleting: ");
-                    String filename = sc.next().trim().toLowerCase()1;
+                    String filename = sc.next().trim();
                     deleteFile(filename);
                     display();
                 }
@@ -106,12 +100,12 @@ public class Project_File {
         String[] list = folder_name.list();
         for (String file: list) {
             if (filename.equalsIgnoreCase(file)) {
-                System.out.println("File " + filename + " already exists at " + folder_name);
+                System.out.println("File \"" + filename + "\" already exists at " + folder_name);
                 return;
             }
         }
         filepath.createNewFile();
-        System.out.println("File "+filename+" added to "+ folder_name);
+        System.out.println("File \""+filename+"\" added to "+ folder_name);
     }
 
     void deleteFile(String filename) {
@@ -119,7 +113,7 @@ public class Project_File {
         String[] list = folder_name.list();
         for (String file: list) {
             if (filename.equals(file) && filepath.delete()) {
-                System.out.println("File " + filename + " deleted from " + folder_name);
+                System.out.println("File \"" + filename + "\" deleted from " + folder_name);
                 return;
             }
         }
@@ -130,11 +124,11 @@ public class Project_File {
         String[] list = folder_name.list();
         for (String file: list) {
             if (filename.equals(file)) {
-                System.out.println("FOUND : File " + filename + " exists at " + folder_name);
+                System.out.println("FOUND : File \"" + filename + "\" exists at " + folder_name);
                 return;
             }
         }
-        System.out.println("File not ");
+        System.out.println("File not Found ");
     }
 
     public static void main(String[] args) {
