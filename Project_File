@@ -67,7 +67,7 @@ public class Project_File {
                     
                     System.out.println("Thank You");
                     System.exit(0);
-                }               
+                } 
                 
                 default : 
                 	System.out.println("Please enter 1-9");
@@ -79,8 +79,6 @@ public class Project_File {
             display();
           }
     }
-
-   
 
     void showFiles() {
         if (folder_name.list().length==0)
